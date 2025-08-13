@@ -20,6 +20,9 @@
     --accent-foreground: 0 0% 100%;
     --accent-hover: 0 0% 20%;
     
+    /* Custom Colors */
+    --gold: 48 100% 50%;
+    
     /* Borders & Dividers */
     --border: 0 0% 90%;
     --border-subtle: 0 0% 95%;
@@ -107,7 +110,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-space;
     font-feature-settings: 'cv11', 'ss01';
     font-variation-settings: 'opsz' 32;
   }

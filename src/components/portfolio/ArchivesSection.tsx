@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const archiveItems = [
   {
     id: "1",
@@ -17,12 +19,33 @@ const archiveItems = [
 
 export const ArchivesSection = () => {
   return (
-    <section className="container-portfolio py-8 md:py-16">
-      <h2 className="caption mb-8 md:mb-12">archives & explorations</h2>
+    <motion.section 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="container-portfolio py-8 md:py-16"
+    >
+      <motion.h2 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="caption mb-8 md:mb-12"
+      >
+        archives & explorations
+      </motion.h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-        {archiveItems.map((item) => (
-          <div key={item.id} className="group">
+        {archiveItems.map((item, index) => (
+          <motion.div 
+            key={item.id} 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            viewport={{ once: true }}
+            className="group"
+          >
             <div className="aspect-[4/3] bg-surface rounded-xl mb-6 overflow-hidden relative">
               <div className="absolute inset-0 bg-gray-200"></div>
               <div className="absolute top-4 right-4 w-8 h-8 bg-black rounded-full flex items-center justify-center">
@@ -40,9 +63,9 @@ export const ArchivesSection = () => {
                 {item.title}
               </h3>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
