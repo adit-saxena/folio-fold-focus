@@ -4,7 +4,7 @@ import { WorksSection } from "@/components/portfolio/WorksSection";
 import { ArchivesSection } from "@/components/portfolio/ArchivesSection";
 import { Footer } from "@/components/portfolio/Footer";
 
-const Index = () => {
+const Portfolio = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -16,4 +16,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Portfolio;
